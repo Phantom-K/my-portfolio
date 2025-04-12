@@ -27,7 +27,10 @@ export default {
     },
     extend: {
       boxShadow:{
-        goldShadow:'0px 0px 20px 0px rgba(243 202 82)'
+        goldShadow:'0px 0px 20px 0px rgba(243 202 82)',
+        goldMediunshadow:'10px 10px 200px 150px  rgba(243 202 82)',
+        greenMediunshadow:'10px 10px 200px 150px  rgba(31 125 83 )',
+
       }
     },
     fontFamily:{
