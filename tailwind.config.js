@@ -21,6 +21,7 @@ export default {
       brightGreen:"#1F7D53",
       lightBrown:"#EED3B1",
       brownishWhite:"#F3CA52",
+      darkgold:"#EEDC82",
       grey:"#626965",
       darkGrey:"#3f4441",
       lightgrey:"#978580",
