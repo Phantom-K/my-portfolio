@@ -4,6 +4,8 @@ import { FaCss3Alt } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
 import SingleSkill from "./SingleSkill";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../framerMotion/variants";
 
 const skills = [
   {
@@ -19,7 +21,7 @@ const skills = [
     icon: RiTailwindCssFill,
   },
   {
-    skill:"JavaScript",
+    skill: "JavaScript",
     icon: IoLogoJavascript,
   },
   {
@@ -29,14 +31,25 @@ const skills = [
 ];
 
 const AllSkillsSM = () => {
-  return <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-12 my-12">
-    {skills.map((item,index)=>{
-        return <div key={index} className="flex flex-col items-center">
-            <item.icon className="text-7xl text-brownishWhite"/>
+  return (
+    <div className="grid md:grid-cols-4 sm:grid-cols-2 gap-12 my-12">
+      {skills.map((item, index) => {
+        return (
+          <motion.div
+            variants={fadeIn("up", 0.2)}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.7 }}
+            key={index}
+            className="flex flex-col items-center"
+          >
+            <item.icon className="text-7xl text-brownishWhite" />
             <p className="text-center mt-4 text-white">{item.skill}</p>
-        </div>
-    })}
-  </div>;
+          </motion.div>
+        );
+      })}
+    </div>
+  );
 };
 
 export default AllSkillsSM;

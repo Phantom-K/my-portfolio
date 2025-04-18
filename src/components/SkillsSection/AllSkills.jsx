@@ -4,6 +4,8 @@ import { FaCss3Alt } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io";
 import { RiReactjsFill, RiTailwindCssFill } from "react-icons/ri";
 import SingleSkill from "./SingleSkill";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../framerMotion/variants";
 
 const skills = [
   {
@@ -19,7 +21,7 @@ const skills = [
     icon: RiTailwindCssFill,
   },
   {
-    skill:"JavaScript",
+    skill: "JavaScript",
     icon: IoLogoJavascript,
   },
   {
@@ -33,7 +35,16 @@ const AllSkills = () => {
       <div className="flex items-center justify-center relative gap-2 max-w-[1200px] mx-auto">
         {skills.map((item, index) => {
           const Icon = item.icon;
-          return  <SingleSkill key={index} text={item.skill} imgSvg={<Icon />} />
+          return (
+            <motion.div
+              variants={fadeIn("up", `0.${index}`)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: false, amount: 0.7 }}
+            >
+              <SingleSkill key={index} text={item.skill} imgSvg={<Icon />} />
+            </motion.div>
+          );
         })}
       </div>
     </div>

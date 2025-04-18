@@ -9,6 +9,7 @@ import NavbarMain from "./components/Navbar/Navbarmain";
 import SkillsMain from "./components/SkillsSection/SkillsMain";
 import SubSkills from "./components/SkillsSection/SubSkills";
 import ContactMeMain from "./components/ContactMeSection/ContactMeMain";
+import FooterMain from "./components/Footer/FooterMain";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <ExperienceMain />
       <ProjectMain />
       <ContactMeMain />
+      <FooterMain />
       <HelperSection />
     </main>
   );
